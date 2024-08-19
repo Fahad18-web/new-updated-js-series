@@ -1,6 +1,6 @@
-// const stop = document.getElementById("stop")
+const stop = document.getElementById("stop")
 
-
+const start = document.getElementById("start")
 
 // setTimeout(function(){
 //     // console.log("hello world!");
@@ -41,7 +41,7 @@ const stopBtn = document.querySelector("#stop")
 
 // const stopRun   =  setInterval(run, 1000)
 
-const startBtn = document.querySelector("#start")
+// const startBtn = document.querySelector("#start")
 
 // stopBtn.addEventListener("click",function(){
 //     clearInterval(stopRun)
@@ -65,15 +65,57 @@ const startBtn = document.querySelector("#start")
 
 
 
-const count = function(){
-   let i = 0
-   while(i<=10){
-      console.log(i++);
-   }
-}
+// const count = function(){
+//    let i = 0
+//    while(i<=10){
+//       console.log(i++);
+//    }
+// }
 
-const stopcount =  setTimeout(count,2000)
+// const stopcount =  setTimeout(count,2000)
 
 // clearTimeout(stopcount)
 
+// start.addEventListener("click",function(){
+   
+// const runEvent = function(){
+//    console.log("event is running");
+//    document.body.style.backgroundColor = "black"
+   
+// }
 
+//   stopEvent = setInterval(runEvent,1000)
+// })
+
+// stopBtn.addEventListener("click",function(){
+//    clearInterval(stopEvent)
+//    console.log("event is stopped");
+//    document.body.style.backgroundColor = "brown"
+   
+// })
+
+// background changer
+
+const randomColor = function(){
+   let hex = '0123456789ABCDEF'
+   let color = '#'
+   for(i = 0; i < 6; i++){
+      color += hex[Math.floor(Math.random() * 16)]
+   }
+   return color
+}
+
+// console.log(randomColor());
+
+
+start.addEventListener("click", function(){
+   const changeBg = function(){
+      document.body.style.backgroundColor = randomColor()
+   }
+
+   stopBg =  setInterval(changeBg,1000)
+})
+
+stop.addEventListener("click",function(){
+   clearInterval(stopBg)
+})
